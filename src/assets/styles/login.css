@@ -1,7 +1,7 @@
 .imgcontainer {
     text-align: center;
     margin: 24px 0 12px 0;
-    border: solid red;
+   
   }
 img.avatar{
     /* vertical-align: middle;
@@ -58,6 +58,13 @@ button {
         width: 100%;
     }
   }
+
+  .error_message {
+    color:rgb(220, 83, 24);
+    font-weight: 50;
+    font-style: italic;
+    
+}
 
   /* @media screen and (max-width: 300px) {
     span.psw {
