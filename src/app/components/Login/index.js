@@ -1,10 +1,14 @@
 import React, { useEffect } from "react";
 import AvatarImage from "../../../assets/image/img_avatar.png";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { set } from "../../util/storageUtil";
 
 import * as authService from "../../service/authService";
 
 const LoginForm = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     formState: { errors },
@@ -20,8 +24,9 @@ const LoginForm = () => {
 
   const onSubmit = (data) => {
     authService.login(data).then((response) => {
-      if (response.data && response.status == "success") {
-        alert(response.message);
+      if (response.data && response.status === "success") {
+        set("local", "loggedInUser", response.data.token);
+        navigate("/home");
       } else {
         alert(response.message);
       }
