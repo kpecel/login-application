@@ -1,14 +1,15 @@
-import React from "react";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import UserDetail from "../user-detail";
+import UserContext from "../../context/userContext";
 
 const LandingPage = () => {
-  useEffect(() => {});
+  const [name, setName] = useState("peshal");
 
   return (
     <div>
-      <h1>I am Landing Page</h1>
-      <UserDetail />
+      <UserContext.Provider value={name}>
+        <UserDetail />
+      </UserContext.Provider>
     </div>
   );
 };

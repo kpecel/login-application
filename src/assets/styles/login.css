@@ -7,7 +7,7 @@ img.avatar{
     /* vertical-align: middle;
     width: 200px;
     height: 200px; */
-    width: 40%;
+    width: 15%;
     border-radius: 50%;
 }
 
@@ -66,7 +66,7 @@ button {
     
 }
 
-  /* @media screen and (max-width: 300px) {
+   @media screen and (max-width: 300px) {
     span.psw {
        display: block;
        float: none;
@@ -74,4 +74,4 @@ button {
     .cancelbtn {
        width: 100%;
     }
-  } */
+  } 

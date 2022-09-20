@@ -1,9 +1,11 @@
 import React from "react";
+import MyDetails from "../my-details";
 
 const UserDetail = () => {
   return (
     <div>
-      <p>I am user detail</p>
+      <p>This is my Details</p>
+      <MyDetails />
     </div>
   );
 };
