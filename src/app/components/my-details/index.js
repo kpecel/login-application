@@ -1,12 +1,10 @@
-import React, { useContext } from "react";
-import LoginContext from "../../context/userContext";
+import React from "react";
 
 const MyDetails = () => {
-  const name = useContext(LoginContext);
   return (
     <>
       <div>
-        <p>Name:{name}</p>
+        <p>Name: Peshal</p>
         <br />
         <span>Age: 26</span>
         <span>Role: Admin</span>
