@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from "react";
 import UserDetail from "../user-detail";
 
+import { decodeToken } from "../../util/decoder";
+import { get } from "../../util/storageUtil";
+
 const LandingPage = () => {
-  const [name, setName] = useState("peshal");
+  const updateDetails = () => {
+    let user = decodeToken(get("local", "loggedInUser"));
+  };
+
+  useEffect(() => {
+    updateDetails();
+  });
 
   return (
     <div>
