@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import UserDetail from "../user-detail";
 import { Provider, useDispatch } from "react-redux";
 import { updateUserDetails } from "../../features/user/slice/userSlice";
