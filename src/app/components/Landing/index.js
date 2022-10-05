@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import UserDetail from "../user-detail";
 
 import { decodeToken } from "../../util/decoder";
@@ -10,7 +10,6 @@ const LandingPage = () => {
 
   const updateDetails = () => {
     let user = decodeToken(get("local", "loggedInUser"));
-
     userStore.updateUserDetails(user);
   };
 
