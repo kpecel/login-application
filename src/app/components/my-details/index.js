@@ -1,7 +1,9 @@
 import React, { Profiler } from "react";
+import { useRecoilValue } from "recoil";
+import { userState } from "../store/userStore";
 
-const MyDetails = (props) => {
-  const { data } = props;
+const MyDetails = () => {
+  const data = useRecoilValue(userState);
   return (
     <Profiler id="myProfiler" onRender={onRenderCallback}>
       <div>

@@ -3,16 +3,15 @@ import UserDetail from "../user-detail";
 
 import { decodeToken } from "../../util/decoder";
 import { get } from "../../util/storageUtil";
+import { useRecoilState } from "recoil";
+import { userState } from "../store/userStore";
 
 const LandingPage = () => {
-  const [data, setData] = useState({ firstName: "", lastName: "", role: "" });
+  const [_, setUserState] = useRecoilState(userState);
+
   const updateDetails = () => {
     let user = decodeToken(get("local", "loggedInUser"));
-    updateStateData(user);
-  };
-
-  const updateStateData = (user) => {
-    setData({
+    setUserState({
       firstName: user.firstName,
       lastName: user.lastName,
       role: user.role,
@@ -25,7 +24,7 @@ const LandingPage = () => {
 
   return (
     <div>
-      <UserDetail data={data} />
+      <UserDetail />
     </div>
   );
 };
