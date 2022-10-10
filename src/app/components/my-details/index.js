@@ -1,16 +1,17 @@
 import React, { Profiler } from "react";
+import useStore from "../../store/store";
 
-const MyDetails = (props) => {
-  const { data } = props;
+const MyDetails = () => {
+  const userData = useStore((state) => state.data);
   return (
     <Profiler id="myProfiler" onRender={onRenderCallback}>
       <div>
         <p>
-          Name: {data.firstName} {data.lastName}
+          Name: {userData.firstName} {userData.lastName}
         </p>
         <br />
-        <span>Age: 26</span>
-        <span>Role: {data.role}</span>
+        <span>Age: 23 </span>
+        <span>Role: {userData.role}</span>
       </div>
     </Profiler>
   );

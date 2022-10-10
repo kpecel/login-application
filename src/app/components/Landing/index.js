@@ -1,22 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import UserDetail from "../user-detail";
 
 import { decodeToken } from "../../util/decoder";
 import { get } from "../../util/storageUtil";
+import { useStore } from "zustand";
 
 const LandingPage = () => {
-  const [data, setData] = useState({ firstName: "", lastName: "", role: "" });
+  const bears = useStore((state) => state.bears);
+
   const updateDetails = () => {
     let user = decodeToken(get("local", "loggedInUser"));
-    updateStateData(user);
-  };
-
-  const updateStateData = (user) => {
-    setData({
-      firstName: user.firstName,
-      lastName: user.lastName,
-      role: user.role,
-    });
+    //  updateUser(user);
   };
 
   useEffect(() => {
@@ -25,7 +19,7 @@ const LandingPage = () => {
 
   return (
     <div>
-      <UserDetail data={data} />
+      <UserDetail a={bears} />
     </div>
   );
 };
